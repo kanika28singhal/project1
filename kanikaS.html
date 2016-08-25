@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+<title>project1</title>
+</head>
+<body>
+	<form>
+		<img id="myImage" src="sad.png" height="20%" width="10%"/>
+		<p>Click the button</p>
+		<input type="button" value="start" onclick="moveright();"/>
+	</form>
+	<script>
+		init();
+		
+		function init()
+		{
+		imgObj = document.getElementById('myImage');
+		imgObj.style.position= 'relative';
+		imgObj.style.left = '0px';
+		}
+		function moveright()
+		{
+			var elem = document.getElementById("myImage");
+			var pos = 0;
+			var id = setInterval(frame,10);
+			
+			function frame() 
+			{
+					
+				if (pos == 800)
+					{	elem.src="happy.png";
+						clearInterval(id);
+					}
+				else if(pos == 200)
+				{
+					elem.src="happy4.jpg";
+					pos++;
+					elem.style.left = pos + "px";
+				}
+				else if(pos == 600)
+				{
+					elem.src="happy5.jpg";
+					pos++;
+					elem.style.left = pos + "px";
+				}
+					
+				else if(pos == 400)
+				{
+					elem.src="happy6.png";
+					pos++;
+					elem.style.left = pos + "px";
+				}
+				else{
+					
+					pos++;
+					elem.style.left = pos + "px";
+					}
+					
+			}
+			if(pos ==0)
+			{
+					elem.src="sad.png";
+			}
+	}
+		</script>
+</body>
+</html>
